@@ -1,0 +1,34 @@
+{
+	"name": "@adraffy/ens-norm-ref-impl",
+	"version": "0.0.1",
+	"description": "ENS Name Normalization Reference Implementation",
+	"keywords": [
+		"ENS",
+		"Ethereum",
+		"UTS-46",
+		"UTS-51",
+		"IDNA"
+	],
+	"main": "ens-normalize.js",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/adraffy/ens-norm-ref-impl.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/adraffy/ens-norm-ref-impl/issues"
+	},
+	"homepage": "https://github.com/adraffy/ens-norm-ref-impl#readme",
+	"author": {
+		"name": "raffy.eth",
+		"email": "raffy@me.com",
+		"url": "http://raffy.antistupid.com"
+	},
+	"dependencies": {
+		"@adraffy/ensip-norm": "^0.0.1"
+	},
+	"scripts": {
+		"test": "node test.js"
+	}
+}
