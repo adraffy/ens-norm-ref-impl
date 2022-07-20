@@ -1,5 +1,5 @@
 {
-	"name": "@adraffy/ens-norm-ref-impl",
+	"name": "@adraffy/ens-norm-ref-impl.js",
 	"version": "0.0.1",
 	"description": "ENS Name Normalization Reference Implementation",
 	"keywords": [
@@ -13,13 +13,13 @@
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/adraffy/ens-norm-ref-impl.git"
+		"url": "git+https://github.com/adraffy/ens-norm-ref-impl.js.git"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/adraffy/ens-norm-ref-impl/issues"
+		"url": "https://github.com/adraffy/ens-norm-ref-impl.js/issues"
 	},
-	"homepage": "https://github.com/adraffy/ens-norm-ref-impl#readme",
+	"homepage": "https://github.com/adraffy/ens-norm-ref-impl.js#readme",
 	"author": {
 		"name": "raffy.eth",
 		"email": "raffy@me.com",
