@@ -75,7 +75,7 @@ export function ens_normalize(name, beautify = false) {
 			output.push(...cps);
 			continue;
 		}
-		throw new Error(`Disallowed codepoint: ${cp.toString(16).toUpperCase()}`);
+		throw new Error(`Disallowed codepoint: 0x${cp.toString(16).toUpperCase()}`);
 	}
 	return String.fromCodePoint(...output).normalize('NFC');
 }
