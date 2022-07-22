@@ -1,0 +1,1 @@
+export function ens_normalize(name: string, beautify?: boolean): string;

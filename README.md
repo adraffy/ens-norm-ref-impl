@@ -9,3 +9,8 @@ import {ens_normalize} from '@adraffy/ens-norm-ref-impl.js';
 
 let normalized = ens_normalize('🚴‍♂️.eth'); // throws if invalid
 ```
+
+## NPM
+```
+npm i @adraffy/ens-norm-ref-impl.js
+```
