@@ -1,16 +1,18 @@
 # ENS Normalize Reference Implementation
+No frills implementation of [@adraffy/ensip-norm](https://github.com/adraffy/ensip-norm)
 
 ![Warning](./warning.png)
 
 ## Example
 
 ```Javascript
-import {ens_normalize} from '@adraffy/ens-norm-ref-impl.js';
+import {ens_normalize} from '@adraffy/ens-norm-ref-impl.js'; // npm i @adraffy/ens-norm-ref-impl.js
+// browser: https://unpkg.com/@adraffy/ens-norm-ref-impl.js@latest/dist/index.min.js
 
 let normalized = ens_normalize('🚴‍♂️.eth'); // throws if invalid
 ```
 
-## NPM
-```
-npm i @adraffy/ens-norm-ref-impl.js
-```
+## Build
+
+* `npm run test` &mdash; run validation tests
+* `npm run build` &mdash; create `/dist/`
