@@ -1,6 +1,6 @@
 {
-	"name": "@adraffy/ens-norm-ref-impl.js",
-	"version": "0.0.3",
+	"name": "@adraffy/ens-norm-ref-impl",
+	"version": "0.0.4",
 	"description": "ENS Name Normalization Reference Implementation",
 	"keywords": [
 		"ENS",
@@ -26,7 +26,7 @@
 		"url": "http://raffy.antistupid.com"
 	},
 	"dependencies": {
-		"@adraffy/ensip-norm": "^0.0.3"
+		"@adraffy/ensip-norm": "^0.0.4"
 	},
 	"scripts": {
 		"test": "node test.js",
