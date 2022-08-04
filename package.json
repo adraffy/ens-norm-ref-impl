@@ -1,6 +1,6 @@
 {
 	"name": "@adraffy/ens-norm-ref-impl",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "ENS Name Normalization Reference Implementation",
 	"keywords": [
 		"ENS",
