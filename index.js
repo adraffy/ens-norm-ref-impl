@@ -1,5 +1,8 @@
 import {CHARS, EMOJI} from '@adraffy/ensip-norm';
 
+const HYPHEN = 0x2D;
+const UNDERSCORE = 0x5F;
+
 // create lookup tables
 let {valid, mapped, ignored} = CHARS;
 valid = new Set(valid);
@@ -43,13 +46,39 @@ function consume_emoji(cps) {
 	return emoji;
 }
 
-export function ens_normalize(name, beautify = false) {
-	let input = [...name].map(s => s.codePointAt(0)).reverse(); // flip so we can pop
+// split string into codepoints
+function explode_cp(s) {
+	return [...s].map(c => c.codePointAt(0));
+}
+
+// check leading underscore
+// check label extension (if ASCII)
+function post_check(name) {
+	for (let label of name.split('.')) {		
+		let cps = explode_cp(label);
+		try {
+			for (let i = cps.lastIndexOf(UNDERSCORE) - 1; i >= 0; i--) {
+				if (cps[i] !== UNDERSCORE) {
+					throw new Error(`underscore only allowed at start`);
+				}
+			}
+			if (cps.length >= 4 && cps.every(cp => cp < 0x80) && cps[2] === HYPHEN && cps[3] === HYPHEN) {
+				throw new Error(`invalid label extension`);
+			}
+		} catch (err) {
+			throw new Error(`Invalid label "${label}": ${err.message}`);
+		}
+	}
+}
+
+// follow ENSIP processing steps directly
+function normalize(name, emoji_filter) {
+	let input = explode_cp(name).reverse(); // flip so we can pop
 	let output = [];
 	while (input.length) {		
 		let emoji = consume_emoji(input);
 		if (emoji) {
-			output.push(...(beautify ? emoji : emoji.filter(cp => cp != 0xFE0F)));
+			output.push(...emoji_filter(emoji));
 			continue;
 		}
 		let cp = input.pop();
@@ -67,5 +96,14 @@ export function ens_normalize(name, beautify = false) {
 		}
 		throw new Error(`Disallowed codepoint: 0x${cp.toString(16).toUpperCase()}`);
 	}
-	return String.fromCodePoint(...output).normalize('NFC');
+	let norm = String.fromCodePoint(...output).normalize('NFC');
+	post_check(norm);
+	return norm;
+}
+
+export function ens_normalize(name) {
+	return normalize(name, e => e.filter(cp => cp != 0xFE0F));
+}
+export function ens_beautify(name) {
+	return normalize(name, e => e);
 }
