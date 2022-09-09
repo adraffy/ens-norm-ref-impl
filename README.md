@@ -15,5 +15,5 @@ let normalized = ens_normalize('🚴‍♂️.eth'); // throws if invalid
 
 ## Build
 
-* `npm run test` &mdash; run validation tests
-* `npm run build` &mdash; create `/dist/`
+* `npm run test` — run validation tests
+* `npm run build` — create `/dist/`

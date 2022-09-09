@@ -1,6 +1,6 @@
 {
 	"name": "@adraffy/ens-norm-ref-impl",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "ENS Name Normalization Reference Implementation",
 	"keywords": [
 		"ENS",
@@ -9,9 +9,12 @@
 		"UTS-51",
 		"IDNA"
 	],
-	"main": "index.js",
-	"browser": "dist/index.min.js",
 	"type": "module",
+	"main": "./dist/index.js",
+	"files": [
+		"./dist",
+		"*.d.ts"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/adraffy/ens-norm-ref-impl.js.git"
@@ -27,7 +30,7 @@
 		"url": "http://raffy.antistupid.com"
 	},
 	"dependencies": {
-		"@adraffy/ensip-norm": "^0.0.7"
+		"@adraffy/ensip-norm": "^0.0.8"
 	},
 	"scripts": {
 		"test": "node test.js",
